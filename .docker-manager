@@ -1,0 +1,12 @@
+containerDefaults:
+  dns: 172.17.0.1
+  restart: always
+  swappiness: 0
+
+
+container:
+
+  rust-server:
+    maxContainers: 1
+    image: didstopia/rust-server:latest
+    environmentFile: ./.rustafied-clone.env
