@@ -1,5 +1,5 @@
 containerDefaults:
-  dns: 172.17.0.1
+  dns: 8.8.8.8
   restart: always
   swappiness: 0
 
@@ -10,3 +10,6 @@ container:
     maxContainers: 1
     image: didstopia/rust-server:latest
     environmentFile: ./.rustafied-clone.env
+    volumes:
+      - source: /Users/walsercl/Development/claudio/rust-servers/data/rust-server
+        target: /steamcmd/rust
