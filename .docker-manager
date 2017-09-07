@@ -13,3 +13,19 @@ container:
     volumes:
       - source: /Users/walsercl/Development/claudio/rust-servers/data/rust-server
         target: /steamcmd/rust
+    portMapping:
+      - "8080:8080"
+      - "28015:28015"
+      - "28016:28016"
+
+  rusted-switzerland:
+    maxContainers: 1
+    image: didstopia/rust-server:latest
+    environmentFile: ./.rusted-switzerland.env
+    volumes:
+      - source: /Users/walsercl/Development/claudio/rust-servers/data/rusted-switzerland
+        target: /steamcmd/rust
+    portMapping:
+      - "8081:8080"
+      - "28017:28015"
+      - "28018:28016"
