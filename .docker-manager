@@ -9,10 +9,17 @@ container:
   rust-server:
     maxContainers: 1
     image: didstopia/rust-server:latest
-    environmentFile: /home/claudio/docker-manager/rust-servers/.rust-server.env
+    environmentFile: /home/claudio/docker-manager/game-servers/.rust-server.env
     volumes:
-      - source: /home/claudio/docker-manager/rust-servers/data/rust-server
+      - source: /home/claudio/docker-manager/game-servers/data/rust-server
         target: /steamcmd/rust
     portMapping:
       - "28017:28015"
       - "28017:28015/udp"
+
+  minecraft-server:
+    maxContainers: 1
+    image: itzg/minecraft-server
+    environmentFile: /home/claudio/docker-manager/game-servers/.minecraft-server.env
+    portMapping:
+      - "25565:25565"
