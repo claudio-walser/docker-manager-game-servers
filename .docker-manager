@@ -21,5 +21,9 @@ container:
     maxContainers: 1
     image: itzg/minecraft-server
     environmentFile: /home/claudio/docker-manager/game-servers/.minecraft-server.env
+    volumes:
+      - source: /home/claudio/docker-manager/game-servers/data/minecraft-server
+        target: /data
+        uid: 1000
     portMapping:
       - "25565:25565"
