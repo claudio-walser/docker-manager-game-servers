@@ -13,9 +13,10 @@ container:
     volumes:
       - source: /home/claudio/docker-manager/game-servers/data/rust-server
         target: /steamcmd/rust
-    portMapping:
-      - "28017:28015"
-      - "28017:28015/udp"
+    portMapping
+      - "28016:28016"
+      - "28015:28015"
+      - "28015:28015/udp"
 
   minecraft-server:
     maxContainers: 1
